@@ -1,0 +1,83 @@
+body {
+background-color: #B5C8B1;
+}
+main {
+	width: 100%;
+	padding-top: 8%;
+	padding-bottom: 4%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+.background { padding: 32px; background-color: #FFF; }
+.card-container {
+	position: relative;
+	padding: 12px;
+	margin-top: 12px;
+	max-width: 800px;
+	min-width: 460px;
+	height: content;
+	box-sizing: border-box;
+
+	display: flex;
+	border: #D1D1D1 solid 1px;
+	background-color: #FFF;
+}
+.card-container:hover { box-shadow: 0px 0.1px 9px 1px #B1B1B1;   transition-duration: 0.3s;}
+.card-container:not(:hover) { transition: 0.3s; }
+.photo {
+	width: 150px;
+	height: 110px;
+	margin-right: 12px;
+	background: grey;
+}
+.line-container, .line-subcontainer { display: flex; justify-content: space-between; align-items: center; }
+.line-container { width: 100%; min-width: 220px; }
+.line-subcontainer { display: flex; align-items: center; }
+.card-name {
+	font-size: 22px;
+	font-weight: 500;
+	text-decoration: none;
+	cursor: pointer;
+	color: #000;
+}
+
+
+/* Особенности элементов ценовой строки */
+.card-name:hover, .card-name:active, .card-name:visited { color: #006D1E; }
+.price { font-size: 22px;	color: #018326;		font-weight: 400; font-family: 'Roboto Condensed', sans-serif; margin-right: 12px; }
+.date {	font-size: 12px;	color: #ABABAB;	font-weight: 300; }
+.description-container {
+	margin-top: 6px;
+	font-size: 15px;
+	min-width: 400px;
+	height: 70px;
+	overflow: hidden;
+	font-weight: 400;
+	color: #808080;
+}
+@media screen and (max-width: 1024px) {	.card-container { width: 100%; } }
+@media screen and (max-width: 625px) {
+	.card-container {
+		flex-direction: column;
+		align-items: center;
+		max-width: 370px;
+		min-width: 250px;
+	}
+	.card-name { align-self: start; }
+	.line-container { flex-direction: column; width: 100%; }
+	.line-container, .line-subcontainer {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+}
+	.description-container {min-width: 160px; position: relative; }
+	.photo {
+		margin: 0 0 12px 0;
+		width: 100%;
+		height: auto;
+		background-color: grey;
+	}
+}
+@media screen and (min-width: 425px) { .background {padding: 32px 24px;} }

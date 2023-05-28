@@ -1,0 +1,109 @@
+/*body {
+	height: 100%;
+	overflow-y: hidden;
+}*/
+main {
+	padding: 100px 0 42px;
+	margin: 0px;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.column {
+	width: 50%;
+	padding: 0 24px;
+	overflow-y: hidden;
+	cursor: default;
+}
+.left-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: content;
+}
+
+.main-photo {
+	width: 506px;
+	height: 412px;
+	background-color: #ABABAB;
+}
+.photo-container {
+	margin-top: 12px;
+	width: 506px;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(2,1fr);
+	grid-row-gap: 12px;
+	grid-column-gap: 16px;
+}
+.scale img {
+	width: 100%;
+	height: auto;
+	background-color: #ABABAB;
+}
+.scale { overflow: hidden; width: 100%; }
+.scale img:hover { transform: scale(1.1); transition: 0.3s; }
+.scale img:not(:hover) { transition: 0.3s; }
+.title { font-size: 50px; font-weight: 500; }
+.price { font-size: 45px; font-weight: 400; color: #018326; font-family: 'Roboto Condensed', sans-serif; }
+.subtitle { font-size: 30px; font-weight: 400; margin-top: 12px; }
+.description {
+	width: 100%;
+	height: content;
+	font-size: 18px;
+	font-weight: 300;
+	color: #808080;
+}
+.contact { width: 50%; }
+
+
+
+
+/* ================== Под ноуты =================*/
+@media screen and ( max-width: 1032px ) {
+	main{ padding-top: 82px;  }
+	.main-photo {
+		width: calc(506px * 0.8);
+		height: calc(412px * 0.8);
+	}
+	.photo-container {
+		width: calc(500px * 0.8);
+	}
+	.title { font-size: 42px; }
+	.price { font-size: 38px; }
+	.subtitle { font-size: 26px; }
+	.description, .contact { font-size: 16px; }
+}
+
+
+
+
+/* ================== Под планшеты и телефоны =================*/
+@media screen and ( max-width: 850px ) {
+	.fixed { position: static; }
+	main { flex-direction: column; padding: 28px 76px; }
+	.column { width: 100%; padding: 0; }
+	.contact { width: 70%; }
+	.main-photo {
+		width: calc(506px * 0.7);
+		height: calc(412px * 0.7);
+	}
+	.photo-container { width: calc(506px * 0.7); }
+	.title { margin-top: 12px; font-size: 36px; }
+	.price { font-size: 32px; }
+	.subtitle { font-size: 22px; }
+}
+
+
+
+
+@media screen and ( max-width: 500px ) {
+	main { padding: 16px; }
+	.contact { width: 100%; }
+	.main-photo { width: 100%; height: auto; }
+	.photo-container { width: 100%;	height: auto; }
+	.title { margin-top: 12px; font-size: 28px; }
+	.price { font-size: 24px; }
+	.subtitle { font-size: 18px; }
+}
