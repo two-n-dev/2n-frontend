@@ -1,0 +1,279 @@
+:hover, :active, :focus, :after { outline: none; outline-offset: none; }
+* { box-sizing: border-box; }
+::selection { background: #B5C8B1; color: #000;}
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0px;
+	display: grid;
+	grid-template-rows: : auto auto 1fr;
+}
+main { margin: 0 auto;}
+body::-webkit-scrollbar { width: 12px; }
+body::-webkit-scrollbar-track { background: #ECF8E9; }
+body::-webkit-scrollbar-thumb { background: #868686; }
+:link { text-decoration: none; }
+li { list-style-type: none; }
+
+/* ------------- Кнопки ------------- */
+button:hover, a:hover { transition-duration: 0.2s; cursor: pointer; }
+button:not(:hover), a:not(:hover) { transition-duration: 0.2s; }
+.button {
+	width: 100%;
+	margin-top: 12px;
+	padding: 8px;
+	background: #018326;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+	border: #018326 solid 1px;
+}
+.button:hover { background: #00B233;  color: #FFF; }
+.empty-button {
+	text-align: center;
+	width: 100%;
+	font-size: 18px;
+	color: #018326;
+	min-width: 330px;
+	padding: 6px;
+	margin-top: 6px;
+	border: #2FB855 solid 1px;
+	background: #ECF8E9;
+	align-self: center;
+}
+.empty-button:hover { background: #FFF; }
+.disabled {	display: none; }
+
+
+
+
+
+
+
+
+/* ------------- Строка навигации ------------- */
+.fixed { position: fixed; }
+.block { width: 32px; height: auto; margin-right: 12px; border-radius: 9px; }
+header, nav {
+	position: relative;
+	width: content;
+	padding: 10px 0;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+header { background: #018326; }
+nav {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	color: #018326;
+	background: #EFEFEF;
+	padding: 0px 8px;
+}
+.hide { display: none; }
+
+.name {
+	font-family: 'Play';
+	font-size: 36px;
+	cursor: pointer;
+	color: #FFF;
+}
+ 
+/* -------------------- Линия поиска --------------------------- */
+.search-line input, .search-line button {
+	font-size: 16px;
+	padding: 8px;
+	border: none;
+	background: #FFF;
+	color: #5E5E5E;
+}
+.search-line input:hover, .search-line input:focus, .search-line button:hover { color: #000; background: #FFF; }
+.search-line input { width: 400px; cursor: text; }
+
+
+
+
+
+
+
+footer { background: #222224; padding: 12px; }
+footer ul { display: flex; justify-content: space-around; padding: 0; margin: 12px 0 12px 0; }
+footer li { list-style-type: none; list-style-color: #FFF; line-height: 2; font-weight: 300; }
+footer a { text-decoration: none; color: #FFF; font-size: 18px; }
+
+
+
+
+
+
+
+/* -------------------- Пользователь --------------------------- */
+.user {
+	font-size: 16px;
+	text-decoration: none;
+	color: #FFF;
+}
+/*.user:hover { border-bottom: #FFF solid 1px; }*/
+.user:active, .user:visited { color: #FFF;	text-decoration: none; }
+.user-block { display: flex; align-items: center; }
+
+
+
+
+
+
+
+/* ---------------------- Подчёркивание ---------------------- */
+.underline { position: relative; }
+.underline:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: -3px;
+	width: 0;
+	height: 1px; /* Высота линии */
+	background: #FFF; /* Цвет подчеркивания при исчезании линии*/
+	transition: width 0.5s; /* Время эффекта */
+}
+
+.underline:hover:after {
+	content: "";
+	width: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	height: 1px; /* Высота линии */
+	background: #FFF; /* Цвет подчеркивания при появлении линии*/
+	transition: width 0.5s;  /* Время эффекта */
+}
+
+
+
+
+
+
+
+
+
+/* -------------------- Выпадающий список Категории товаров ------------------- */
+.label { font-size: 22px; }
+.dropbtn {
+	color: #018326;
+	padding: 14px 10px;
+	border: none;
+}
+.dropdown {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+.dropdown-content  {
+	width: content;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	background: #EFEFEF;
+	min-width: 250px;
+	box-shadow: 0px 8px 12px -1px rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+.dropdown-content li {
+	transition-duration: 0.2s;
+	font-size: 16px;
+	color: #303030;
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid rgb(255, 255, 255);
+	padding: 12px 16px;
+	text-decoration: none;
+}
+.space-between li { justify-content: space-between; }
+li input { transform: scale(1.2); margin-right: 12px; }
+nav a, nav a:visited { color: #303030; }
+.dropdown-content li:hover { background: #FFF; color: #004B15; }
+.dropdown:hover .dropdown-content  { opacity: 1; transition-duration: 0.3s; visibility: visible; }
+.price-from-to { display: flex; align-items: center; }
+.from-to-item:first-child { cursor: default; margin-right: 8px; }
+.price-from-to input {
+	padding: 6px 8px;
+	border: #9B9A9A solid 1px;
+	margin-right: 8px;
+	max-width: 140px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------- Данные пользователя (User-contacts) ------------- */
+.contacts-container {
+	width: 100%;
+	margin-top: 12px;
+	display: flex;
+	flex-direction: column;
+	color: #000;
+}
+.contacts-container .contact:nth-child(2n) { background: #EDF3EB; }
+.contact {
+	width: 100%;
+	display: flex;
+	height: content;
+	align-items: center;
+	font-size: 18px;
+	padding: 6px 1px 6px 6px;
+}
+.contact a:visited, .contact a { color: #000; }
+.icon {
+	width: 32px;
+	height: 32px;	
+	margin-right: 12px;
+}
+
+
+
+
+
+
+
+
+
+/* ======================= Большие экраны ==========================*/
+@media screen and ( max-width: 1232px ) {
+	/* -------- FONT-SIZES ------- */
+	nav .label { font-size: 18px; }
+	nav .dropdown-content a { font-size: 16px; }
+	.user { display: none; }
+
+	/*.search-line input { width: 280px; }*/
+	/* ------- PADDING -------- */
+	nav .dropbtn { padding: 6px; }
+	nav .price-from-to { padding: 6px; }
+}
+
+/*========================= Планшеты =============================
+@media screen and ( max-width: 850px ) {
+	header input { width: 400px; }
+}
+ */
+
+/* ------------- Телефоны -------------- */
+@media screen and ( max-width: 600px ) {
+	header { padding: 8px 0; }
+	.user-block:nth-child(1n) { margin-right: 0; }
+	.search-line input { width: 250px; }
+	footer ul { flex-direction: column; align-items: center; }
+	.underline:after { background: #222224; }
+	.underline:hover:after { background: #222224; }
+}
+@media screen and ( max-width: 425px ) {
+	.search-line input { width: 180px; }
+	.block { margin-right: 0; }
+}
