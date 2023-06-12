@@ -2,7 +2,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #B5C8B1;
+	background: #B5C8B1;
 }
 
 .main-container {
@@ -38,16 +38,16 @@ form input {
 	font-size: 15px;
 	font-weight: 300;
 	color: darkgrey;
-	background-color: #ECF8E9;
+	background: #ECF8E9;
 	border: #D1D1D1 solid 2px;
-	/*background-color: #E0E9DE;
+	/*background: #E0E9DE;
 	border: grey solid 1.3px;*/
 }
 input:hover, input:focus, input:after {
 	outline: #D1D1D1 solid 2px;
 	outline-offset: none;
 	border: #FFF solid 2px;
-	background-color: #FFF;
+	background: #FFF;
 	color: #000;
 	transition-duration: 0.1s;
 }

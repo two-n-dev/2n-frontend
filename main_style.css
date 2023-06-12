@@ -1,42 +1,47 @@
+:hover, :active, :focus, :after { outline: none; outline-offset: none; }
 * { box-sizing: border-box; }
 ::selection { background: #B5C8B1; color: #000;}
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0px;
+	display: grid;
+	grid-template-rows: : auto auto 1fr;
 }
+main { margin: 0 auto;}
 body::-webkit-scrollbar { width: 12px; }
-body::-webkit-scrollbar-track { background-color: #ECF8E9; }
-body::-webkit-scrollbar-thumb { background: rgba(34, 34, 36, 0.4); }
+body::-webkit-scrollbar-track { background: #ECF8E9; }
+body::-webkit-scrollbar-thumb { background: #868686; }
 :link { text-decoration: none; }
+li { list-style-type: none; }
 
 /* ------------- Кнопки ------------- */
-button:hover, a:hover { transition-duration: 0.3s; cursor: pointer; }
-button:not(:hover), a:not(:hover) { transition-duration: 0.3s; }
+button:hover, a:hover { transition-duration: 0.2s; cursor: pointer; }
+button:not(:hover), a:not(:hover) { transition-duration: 0.2s; }
 .button {
 	width: 100%;
 	margin-top: 12px;
 	padding: 8px;
-	background-color: #018326;
+	background: #018326;
 	color: #FFF;
 	font-size: 18px;
 	font-weight: 400;
 	text-align: center;
 	border: #018326 solid 1px;
 }
-.button:hover { background-color: #00B233;  color: #FFF; }
+.button:hover { background: #00B233;  color: #FFF; }
 .empty-button {
 	text-align: center;
 	width: 100%;
 	font-size: 18px;
 	color: #018326;
-	min-width: 300px;
+	min-width: 330px;
 	padding: 6px;
 	margin-top: 6px;
 	border: #2FB855 solid 1px;
-	background-color: #FFF;
+	background: #ECF8E9;
 	align-self: center;
 }
-.empty-button:hover { background-color: #ECF8E9; color: #025F00; }
+.empty-button:hover { background: #FFF; }
 .disabled {	display: none; }
 
 
@@ -48,29 +53,29 @@ button:not(:hover), a:not(:hover) { transition-duration: 0.3s; }
 
 /* ------------- Строка навигации ------------- */
 .fixed { position: fixed; }
-.block { width: 26px; height: 26px; margin-right: 12px; }
+.block { width: 32px; height: auto; margin-right: 12px; border-radius: 36px; }
 header, nav {
 	position: relative;
 	width: content;
-	font-size: 20px;
-	font-weight: 400;
-	padding: 8px;
+	padding: 10px 0;
 
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
 	align-items: center;
 }
-header { background-color: #018326; }
+header { background: #018326; }
 nav {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	color: #018326;
-	background-color: #EFEFEF;
+	background: #EFEFEF;
 	padding: 0px 8px;
 }
+.hide { display: none; }
+
 .name {
-	font-size: 32px;	
-	font-weight: 400;
+	font-family: 'Play';
+	font-size: 36px;
 	cursor: pointer;
 	color: #FFF;
 }
@@ -78,19 +83,13 @@ nav {
 /* -------------------- Линия поиска --------------------------- */
 .search-line input, .search-line button {
 	font-size: 16px;
-	font-weight: 300;
 	padding: 8px;
-
 	border: none;
-	background-color: #FFF;
+	background: #FFF;
 	color: #5E5E5E;
 }
-.search-line input:hover, .search-line input:focus, .search-line button:hover { color: #000; border: none;
-	background-color: #FFF; }
-
-.search-line input { width: 500px; cursor: text;}
-.search-line button { padding: 8px 12px; cursor: pointer; }
-
+.search-line input:hover, .search-line input:focus, .search-line button:hover { color: #000; background: #FFF; }
+.search-line input { width: 400px; cursor: text; }
 
 
 
@@ -117,14 +116,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 }
 /*.user:hover { border-bottom: #FFF solid 1px; }*/
 .user:active, .user:visited { color: #FFF;	text-decoration: none; }
-:hover, :active, :focus, :after {
-	outline: none;
-	outline-offset: none;
-}
-.user-block {
-	display: flex;
-	align-items: center;
-}
+.user-block { display: flex; align-items: center; }
 
 
 
@@ -142,7 +134,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 	bottom: -3px;
 	width: 0;
 	height: 1px; /* Высота линии */
-	background-color: #FFF; /* Цвет подчеркивания при исчезании линии*/
+	background: #FFF; /* Цвет подчеркивания при исчезании линии*/
 	transition: width 0.5s; /* Время эффекта */
 }
 
@@ -154,7 +146,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 	left: 0;
 	bottom: -3px;
 	height: 1px; /* Высота линии */
-	background-color: #FFF; /* Цвет подчеркивания при появлении линии*/
+	background: #FFF; /* Цвет подчеркивания при появлении линии*/
 	transition: width 0.5s;  /* Время эффекта */
 }
 
@@ -167,7 +159,10 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 
 
 /* -------------------- Выпадающий список Категории товаров ------------------- */
-.label { font-size: 22px; }
+.label { font-size: 22px; display: flex; align-items: center; }
+.label span { margin-right: 6px; }
+.label svg {  stroke: #018326; stroke-width: 2px; fill: none; padding-top: 3px; }
+.dropdown-content svg { fill: none; stroke: #464646; width: 11; height: 18; }
 .dropbtn {
 	color: #018326;
 	padding: 14px 10px;
@@ -178,39 +173,102 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 	display: inline-block;
 	cursor: pointer;
 }
-.dropdown-content {
-	display: none;
+.dropdown-content  {
+	width: content;
+	opacity: 0;
+	visibility: hidden;
 	position: absolute;
-	background-color: #EFEFEF;
-	min-width: 160px;
+	background: #EFEFEF;
+	min-width: 250px;
 	box-shadow: 0px 8px 12px -1px rgba(0, 0, 0, 0.3);
 	z-index: 1;
 }
-.dropdown-content:first-child {
-	background-color: background-color: rgba(0, 75, 21, 0);
-}
-.dropdown-content a {
+.dropdown-content li {
 	transition-duration: 0.2s;
 	font-size: 16px;
 	color: #303030;
-	display: block;
+	display: flex;
+	align-items: center;
 	border-bottom: 2px solid rgb(255, 255, 255);
 	padding: 12px 16px;
 	text-decoration: none;
 }
-.dropdown-content a:hover { background-color: #FFF; color: #004B15; }
-.dropdown:hover .dropdown-content { display: block; }
-.price-from-to {
-	display: flex;
-	align-items: center;
-}
-.from-to-item {  }
+.space-between li { justify-content: space-between; }
+li input { transform: scale(1.2); margin-right: 12px; }
+nav a, nav a:visited { color: #303030; }
+.dropdown-content li:hover { background: #FFF; color: #004B15; }
+.dropdown:hover .dropdown-content  { opacity: 1; transition-duration: 0.3s; visibility: visible; }
+.price-from-to { display: flex; align-items: center; }
 .from-to-item:first-child { cursor: default; margin-right: 8px; }
 .price-from-to input {
 	padding: 6px 8px;
 	border: #9B9A9A solid 1px;
 	margin-right: 8px;
+	max-width: 140px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+label {
+  position: relative; /* to contain absolute elements */
+  padding-left:30px; /* free space for custom checkbox */
+  cursor: pointer;
+}
+/* hide default checkbox  */
+label input[type=checkbox] {
+  position: absolute; /* prevent taking any space */
+  /* cross-browser hidingg */
+  opactiy: 0;
+  width:0; 
+  height:0;
+}
+/* custom checkbox */
+label span {
+  position: absolute;
+  /* position to the free space in <label> */
+  top:0;
+  left:0;
+  width:20px; 
+  height:20px;
+  background-color: #ddd;
+  transition: .3s background-color; /* slight transition */
+}
+/* the check icon */
+label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  
+  /* check icon */
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+label:hover span {
+  background-color: #ccc;
+}
+/**** Here's the trick ***/
+label input:checked ~ span { background-color: #018326; }
+label input:checked ~ span:after { display:block; }
+
+
+
+
+
 
 
 
@@ -229,7 +287,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 	flex-direction: column;
 	color: #000;
 }
-.contacts-container .contact:nth-child(2n) { background-color: #EDF3EB; }
+.contacts-container .contact:nth-child(2n) { background: #EDF3EB; }
 .contact {
 	width: 100%;
 	display: flex;
@@ -238,8 +296,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 	font-size: 18px;
 	padding: 6px 1px 6px 6px;
 }
-.contact a:visited { color: #000; }
-
+.contact a:visited, .contact a { color: #000; }
 .icon {
 	width: 32px;
 	height: 32px;	
@@ -255,40 +312,34 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 
 
 /* ======================= Большие экраны ==========================*/
-@media screen and ( max-width: 1032px ) {
+@media screen and ( max-width: 1232px ) {
 	/* -------- FONT-SIZES ------- */
-	header, nav { font-size: 10px; }
-	.name {	font-size: 22px; }
 	nav .label { font-size: 18px; }
-	nav .dropdown-content a { font-size: 14px; }
-	header .search-line input, .search-line button { font-size: 12px; }
-
+	nav .dropdown-content a { font-size: 16px; }
 	.user { display: none; }
 
-	.search-line input { width: 400px; }
 	/*.search-line input { width: 280px; }*/
 	/* ------- PADDING -------- */
 	nav .dropbtn { padding: 6px; }
-	nav .price-from-to input { padding: 4px 6px; }
-	header .user { font-size: 14px; }
+	nav .price-from-to { padding: 6px; }
 }
 
-/*========================= Планшеты ============================= */
+/*========================= Планшеты =============================
 @media screen and ( max-width: 850px ) {
-	.name, .user { display: none; }
+	header input { width: 400px; }
 }
-
+ */
 
 /* ------------- Телефоны -------------- */
 @media screen and ( max-width: 600px ) {
-	.search-line input { width: 180px; padding: 6px; }
-	.search-line button { padding: 6px; }
+	header { padding: 8px 0; }
 	.user-block:nth-child(1n) { margin-right: 0; }
-
+	.search-line input { width: 250px; }
 	footer ul { flex-direction: column; align-items: center; }
-	.underline:after { background-color: #222224; }
-	.underline:hover:after { background-color: #222224; }
+	.underline:after { background: #222224; }
+	.underline:hover:after { background: #222224; }
 }
 @media screen and ( max-width: 425px ) {
+	.search-line input { width: 180px; }
 	.block { margin-right: 0; }
 }
