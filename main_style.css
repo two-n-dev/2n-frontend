@@ -53,7 +53,7 @@ button:not(:hover), a:not(:hover) { transition-duration: 0.2s; }
 
 /* ------------- Строка навигации ------------- */
 .fixed { position: fixed; }
-.block { width: 32px; height: auto; margin-right: 12px; border-radius: 9px; }
+.block { width: 32px; height: auto; margin-right: 12px; border-radius: 36px; }
 header, nav {
 	position: relative;
 	width: content;
@@ -159,7 +159,10 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px; }
 
 
 /* -------------------- Выпадающий список Категории товаров ------------------- */
-.label { font-size: 22px; }
+.label { font-size: 22px; display: flex; align-items: center; }
+.label span { margin-right: 6px; }
+.label svg {  stroke: #018326; stroke-width: 2px; fill: none; padding-top: 3px; }
+.dropdown-content svg { fill: none; stroke: #464646; width: 11; height: 18; }
 .dropbtn {
 	color: #018326;
 	padding: 14px 10px;
@@ -203,6 +206,69 @@ nav a, nav a:visited { color: #303030; }
 	margin-right: 8px;
 	max-width: 140px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+label {
+  position: relative; /* to contain absolute elements */
+  padding-left:30px; /* free space for custom checkbox */
+  cursor: pointer;
+}
+/* hide default checkbox  */
+label input[type=checkbox] {
+  position: absolute; /* prevent taking any space */
+  /* cross-browser hidingg */
+  opactiy: 0;
+  width:0; 
+  height:0;
+}
+/* custom checkbox */
+label span {
+  position: absolute;
+  /* position to the free space in <label> */
+  top:0;
+  left:0;
+  width:20px; 
+  height:20px;
+  background-color: #ddd;
+  transition: .3s background-color; /* slight transition */
+}
+/* the check icon */
+label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  
+  /* check icon */
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+label:hover span {
+  background-color: #ccc;
+}
+/**** Here's the trick ***/
+label input:checked ~ span { background-color: #018326; }
+label input:checked ~ span:after { display:block; }
+
+
+
+
+
 
 
 

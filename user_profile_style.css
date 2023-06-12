@@ -65,22 +65,61 @@ article {
 
 button a, button a:visited { color: #018326; }
 button a:active, button a:hover { color: #FFF; }
-form { align-self: start; margin: 0; }
-form p { margin: 6px 0 0; }
-form span, form p {
-	display: flex; width: 100%;
-	margin-top: 6px;
-	color: #808080;
+
+
+
+
+
+
+
+
+
+
+label {
 	font-family: 'Roboto Condensed';
-}
-form input {
 	display: inline-block;
-	width: 12px;
-	margin: 0 12px 0 0;
-	transform: scale(1.4);
+	margin: 6px 48px 0 0;
+	position: relative; /* to contain absolute elements */
+	padding-left: 30px; /* free space for custom radio button */
 	cursor: pointer;
 }
-form label { display: inline-block; width: 100%; }
+/* hide default radio button  */
+label input[type=radio] {
+	position: absolute;
+	opactiy: 0;
+	width:0; 
+	height:0;
+}
+/* custom radio button */
+label span {
+	position: absolute;
+	/* position to the free space in <label> */
+	top:0;
+	left:0;
+	width:20px; 
+	height:20px;
+	background-color: #ddd;
+	border-radius: 50%;
+	transition: .3s background-color; /* slight transition */
+}
+/* the check icon */
+label span:after {	
+	/* middle */
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	background-color:#fff;
+	width:8px;
+	height:8px;
+	border-radius:50%;
+}
+label:hover span { background-color: #ccc; }
+
+/**** Here's the trick ***/
+label input:checked ~ span { background-color: #018326; }
+label input:checked ~ span:after { display:block; }
+
+
 div input, select, textarea, .save {
 	font-family: 'Roboto Condensed';
 	padding: 6px;
@@ -90,6 +129,13 @@ div input, select, textarea, .save {
 	background: #FFF;
 	border: #A4A4A4 solid 1px;
 }
+
+
+
+
+
+
+
 
 textarea { height: 300px; resize: none; font-family: 'Roboto Condensed'; padding: 12px 16px; }
 textarea::-webkit-scrollbar { width: 6px; }
@@ -124,13 +170,13 @@ option { padding-top: 12px; }
 	.disabled { display: flex; margin-top: 12px; font-weight: 500; }
 }
  @media screen and ( max-width: 600px ) {
- 	article {
- 		flex-direction: column;
- 		align-items: center;
- 		padding: 0 0 24px;
- 	}
- 	.flex { flex-direction: column; align-items: center; }
+	article {
+		flex-direction: column;
+		align-items: center;
+		padding: 0 0 24px;
+	}
+	.flex { flex-direction: column; align-items: center; }
 	.empty-button { min-width: 300px; }	
- 	.contacts-container { padding: 0; }
- 	.btn-group { justify-content: center; }
+	.contacts-container { padding: 0; }
+	.btn-group { justify-content: center; }
  }

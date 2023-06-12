@@ -102,12 +102,11 @@
 
 			<article class="center-column">
 				<div class="title title-text"> Мои объявления </div>
-					<div style="position: relative;">
-				<div class="card-container" style="margin-top: 20px;">
+				<a href="product_info_page.html" class="card-container" style="margin-top: 22px;">
 					<div> <img class="photo" src="https://website.drygdryg.lds.net.ua/images/preview-example.jpeg"/> </div>
 					<div class="container">
 						<div class="line-container">
-							<a href="product_info_page.html" class="card-name"> Название товара </a>
+							<div class="card-name"> Название товара </div>
 							<div class="line-subcontainer">
 								<div class="price"> 500 pyб. </div>
 								<div class="date"> 14 марта 2023г. </div>
@@ -119,13 +118,12 @@
 							Некоторое текстовое описание товара. Если его будет слишком много, то часть будет скрыта.
 						</div>
 					</div>
-				</div>
-			</div>
-				<div class="card-container">
+				</a>				
+				<a href="product_info_page.html"  class="card-container">
 					<div> <img class="photo" src="https://website.drygdryg.lds.net.ua/images/preview-example.jpeg"/> </div>
 					<div class="container">
 						<div class="line-container">
-							<a href="product_info_page.html" class="card-name"> Название товара </a>
+							<div class="card-name"> Название товара </div>
 							<div class="line-subcontainer">
 								<div class="price"> 500 pyб. </div>
 								<div class="date"> 14 марта 2023г. </div>
@@ -137,8 +135,7 @@
 							Некоторое текстовое описание товара. Если его будет слишком много, то часть будет скрыта.
 						</div>
 					</div>
-				</div>
-			</div>
+				</a>
 			</article>
 
 
@@ -153,15 +150,20 @@
 						<div> Цена </div>
 						<input type="text">
 					</div>
-					<form style="display: flex;">
-						<p style="margin-right: 24px;">
-							<input type="radio" value="man" checked name="categoria"/> Фиксированная
-						</p>
-						<p>
-							<input type="radio" value="woman" name="categoria"/> Договорная
-						</p>
-				</form>
-					
+
+
+					<div style="width: 100%; margin: 3px 0; display: flex;">
+						<label class="label">Фиксированная
+							<input type="radio" name="price" checked/>
+							<span></span>
+						</label>
+						<label class="label">Договорная
+							<input type="radio" name="price" />
+							<span></span>
+						</label>
+					</div>
+
+
 					<div> Категория </div>
 					<select>
 						<option> Категория вашего товара </option>
@@ -177,14 +179,16 @@
 						<option> Услуги </option>
 					</select>
 
-					<form style="display: flex;">
-						<p style="margin-right: 24px;">
-							<input type="radio" value="new" checked name="categoria"/>Новое
-						</p>
-						<p>
-							<input type="radio" value="used" name="categoria"/>Б/у
-						</p>
-					</form>
+					<span style="width: 100%; margin: 3px 0; display: flex;">
+						<label class="label">Новое
+							<input type="radio" name="used" checked/>
+							<span></span>
+						</label>
+						<label class="label">Б/у
+							<input type="radio" name="used" />
+							<span></span>
+						</label>
+					</span >
 
 					<div> Добавить фото </div>
 					<span class="add-photo-container">
