@@ -24,13 +24,13 @@ main {
 }
 
 .main-photo {
-	width: 506px;
-	height: 412px;
+	width: 100%;
+	height: auto;
 	background: #ABABAB;
 }
 .photo-container {
 	margin-top: 12px;
-	width: 506px;
+	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(4,1fr);
 	grid-template-rows: repeat(2,1fr);
@@ -56,19 +56,14 @@ main {
 	font-weight: 300;
 	color: #808080;
 }
-.contact { width: 50%; }
+.contact { width: 100%; }
 
 
 
 
 /* ================== Под ноуты =================*/
-@media screen and ( max-width: 1032px ) {
+@media screen and ( max-width: 1232px ) {
 	main{ padding-top: 82px;  }
-	.main-photo {
-		width: calc(506px * 0.8);
-		height: calc(412px * 0.8);
-	}
-	.photo-container { width: calc(500px * 0.8); }
 	.title { font-size: 42px; }
 	.price { font-size: 38px; }
 	.subtitle { font-size: 26px; }
@@ -83,21 +78,10 @@ main {
 	.fixed { position: static; }
 	main { flex-direction: column; padding: 28px 76px; }
 	.column { width: 100%; padding: 0; }
-
-	.contact { width: 100%; }
-	.main-photo { width: 100%; height: auto; }
-	.photo-container { width: 100%;	height: auto; }
 	.title { margin-top: 12px; font-size: 36px; }
 	.price { font-size: 32px; }
 	.subtitle { font-size: 22px; }
 }
-
-
-
-
-@media screen and ( max-width: 500px ) {
-	main { padding: 16px; }
-	.title { margin-top: 12px; font-size: 28px; }
-	.price { font-size: 24px; }
-	.subtitle { font-size: 18px; }
+@media screen and ( max-width: 600px ) {
+	main { padding: 24px 18px; }
 }

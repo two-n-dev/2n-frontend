@@ -56,42 +56,51 @@ button:not(:hover), a:not(:hover) { transition-duration: 0.2s; }
 .block { width: 32px; height: auto; margin-right: 12px; border-radius: 36px; }
 header, nav {
 	position: relative;
-	width: content;
-	padding: 10px 0;
+	width: 100%;
 
 	display: flex;
-	flex-flow: row wrap;
 	justify-content: space-around;
 	align-items: center;
 }
-header { background: #018326; }
+header {
+	padding: 8px;
+	background: #018326;
+}
 nav {
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	color: #018326;
+	font-size: 18px;
 	background: #EFEFEF;
-	padding: 0px 8px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.hide { display: none; }
-
-.name {
-	font-family: 'Play';
+header .name {
 	font-size: 36px;
-	cursor: pointer;
-	color: #FFF;
+	font-family: 'Play';	
 }
- 
-/* -------------------- Линия поиска --------------------------- */
-.search-line input, .search-line button {
+header a, header a:hover, header a:visited { color: #FFF; }
+.user-block {
+	margin-right: 12px;
+	display: flex;
+	align-items: center;
+}
+.search-line {
+	z-index: 1;
+	width: 60%;
+	display: flex;
+	justify-content: center;
+}
+.search {
+	font-family: 'Roboto';
+	width: 80%;
+	margin-right: 6px;
+	padding: 8px;
+	border: none;
+}
+.search-btn {
 	font-size: 16px;
 	padding: 8px;
 	border: none;
 	background: #FFF;
-	color: #5E5E5E;
 }
-.search-line input:hover, .search-line input:focus, .search-line button:hover { color: #000; background: #FFF; }
-.search-line input { width: 400px; cursor: text; }
-
-
 
 
 
@@ -100,24 +109,8 @@ nav {
 footer { background: #222224; padding: 12px; }
 footer ul { display: flex; justify-content: space-around; padding: 0; margin: 12px 0 12px 0; }
 footer li { list-style-type: none; list-style-color: #FFF; line-height: 2; font-weight: 300; }
-footer a { text-decoration: none; color: #FFF; font-size: 18px; }
-
-
-
-
-
-
-
-/* -------------------- Пользователь --------------------------- */
-.user {
-	font-size: 16px;
-	text-decoration: none;
-	color: #FFF;
+footer a { text-decoration: none; color: #FFF; font-size: 18px
 }
-/*.user:hover { border-bottom: #FFF solid 1px; }*/
-.user:active, .user:visited { color: #FFF;	text-decoration: none; }
-.user-block { display: flex; align-items: center; }
-
 
 
 
@@ -316,7 +309,6 @@ label input:checked ~ span:after { display:block; }
 	/* -------- FONT-SIZES ------- */
 	nav .label { font-size: 18px; }
 	nav .dropdown-content a { font-size: 16px; }
-	.user { display: none; }
 
 	/*.search-line input { width: 280px; }*/
 	/* ------- PADDING -------- */
@@ -324,22 +316,20 @@ label input:checked ~ span:after { display:block; }
 	nav .price-from-to { padding: 6px; }
 }
 
-/*========================= Планшеты =============================
+/*========================= Планшеты =============================*/
 @media screen and ( max-width: 850px ) {
-	header input { width: 400px; }
+	.user { display: none; }
 }
- */
+ 
 
 /* ------------- Телефоны -------------- */
 @media screen and ( max-width: 600px ) {
 	header { padding: 8px 0; }
 	.user-block:nth-child(1n) { margin-right: 0; }
-	.search-line input { width: 250px; }
 	footer ul { flex-direction: column; align-items: center; }
 	.underline:after { background: #222224; }
 	.underline:hover:after { background: #222224; }
 }
 @media screen and ( max-width: 425px ) {
-	.search-line input { width: 180px; }
 	.block { margin-right: 0; }
 }
