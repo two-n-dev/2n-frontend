@@ -46,8 +46,17 @@ main {
 .scale { overflow: hidden; width: 100%; }
 .scale img:hover { transform: scale(1.1); transition: 0.3s; }
 .scale img:not(:hover) { transition: 0.3s; }
-.title { font-size: 50px; font-weight: 500; }
-.price { font-size: 45px; font-weight: 400; color: #018326; font-family: 'Roboto Condensed', sans-serif; }
+.title { font-size: 50px; font-weight: 500; margin-right: 12px; }
+.variant-container{	display: flex; flex-direction: row; align-items: flex-end;}
+.price { font-size: 45px; font-weight: 400; color: #018326; font-family: 'Roboto Condensed', sans-serif; margin-right: 12px; }
+.variant {
+	font-family: 'Roboto Condensed'
+	font-size: 10px;
+	padding: 6px;
+	margin-bottom: 6px;
+	color: #00B233;
+	background: #EDF3EB;
+}
 .subtitle { font-size: 30px; font-weight: 400; margin-top: 12px; }
 .description {
 	width: 100%;

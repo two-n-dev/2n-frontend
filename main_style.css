@@ -53,28 +53,31 @@ button:not(:hover), a:not(:hover) { transition-duration: 0.2s; }
 
 /* ------------- Строка навигации ------------- */
 .fixed { position: fixed; }
-.block { width: 32px; height: auto; margin-right: 12px; border-radius: 36px; }
+.block { width: 38px; height: auto; border-radius: 36px; }
 header, nav {
 	position: relative;
 	width: 100%;
+	padding: 0 36px 0 36px;
 
 	display: flex;
-	justify-content: space-around;
 	align-items: center;
 }
 header {
-	padding: 8px;
+	padding: 8px 72px;
 	background: #018326;
+	justify-content: space-around;
 }
 nav {
 	color: #018326;
 	font-size: 18px;
 	background: #EFEFEF;
+	justify-content: space-around;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 header .name {
 	font-size: 36px;
-	font-family: 'Play';	
+	font-family: 'Play';
+	padding: 0 42px;
 }
 header a, header a:hover, header a:visited { color: #FFF; }
 .user-block {
@@ -82,6 +85,7 @@ header a, header a:hover, header a:visited { color: #FFF; }
 	display: flex;
 	align-items: center;
 }
+.user { margin-right: 14px; }
 .search-line {
 	z-index: 1;
 	width: 60%;
@@ -89,15 +93,16 @@ header a, header a:hover, header a:visited { color: #FFF; }
 	justify-content: center;
 }
 .search {
+	font-size: 16px;
 	font-family: 'Roboto';
-	width: 80%;
+	width: 86%;
 	margin-right: 6px;
 	padding: 8px;
 	border: none;
 }
 .search-btn {
 	font-size: 16px;
-	padding: 8px;
+	padding: 8px 12px;
 	border: none;
 	background: #FFF;
 }
@@ -176,6 +181,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px
 	box-shadow: 0px 8px 12px -1px rgba(0, 0, 0, 0.3);
 	z-index: 1;
 }
+
 .dropdown-content li {
 	transition-duration: 0.2s;
 	font-size: 16px;
@@ -221,7 +227,7 @@ label {
 label input[type=checkbox] {
   position: absolute; /* prevent taking any space */
   /* cross-browser hidingg */
-  opactiy: 0;
+  opacity: 0;
   width:0; 
   height:0;
 }
@@ -255,7 +261,7 @@ label:hover span {
   background-color: #ccc;
 }
 /**** Here's the trick ***/
-label input:checked ~ span { background-color: #018326; }
+label input:checked ~ span { background-color: #00B233; }
 label input:checked ~ span:after { display:block; }
 
 
@@ -318,6 +324,7 @@ label input:checked ~ span:after { display:block; }
 
 /*========================= Планшеты =============================*/
 @media screen and ( max-width: 850px ) {
+	header .name { padding: 0 12px; }
 	.user { display: none; }
 }
  
