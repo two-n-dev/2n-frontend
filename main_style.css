@@ -81,7 +81,6 @@ header .name {
 }
 header a, header a:hover, header a:visited { color: #FFF; }
 .user-block {
-	margin-right: 12px;
 	display: flex;
 	align-items: center;
 }
@@ -136,7 +135,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px
 	transition: width 0.5s; /* Время эффекта */
 }
 
-.underline:hover:after {
+.user-block:hover .underline:after, .underline:hover:after {
 	content: "";
 	width: 100%;
 	display: block;
@@ -332,6 +331,7 @@ label input:checked ~ span:after { display:block; }
 /* ------------- Телефоны -------------- */
 @media screen and ( max-width: 600px ) {
 	header { padding: 8px 0; }
+	.search-line, .search-btn { padding: 6px; }
 	.user-block:nth-child(1n) { margin-right: 0; }
 	footer ul { flex-direction: column; align-items: center; }
 	.underline:after { background: #222224; }
