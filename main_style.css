@@ -12,6 +12,7 @@ body::-webkit-scrollbar { width: 12px; }
 body::-webkit-scrollbar-track { background: #ECF8E9; }
 body::-webkit-scrollbar-thumb { background: #868686; }
 :link { text-decoration: none; }
+ul, ol { margin: 0; padding: 0; }
 li { list-style-type: none; }
 
 /* ------------- Кнопки ------------- */
@@ -74,6 +75,7 @@ nav {
 	justify-content: space-around;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.navigation { display: none; }
 header .name {
 	font-size: 36px;
 	font-family: 'Play';
@@ -171,9 +173,8 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px
 	cursor: pointer;
 }
 .dropdown-content  {
-	width: content;
-	opacity: 0;
-	visibility: hidden;
+	transform: scaleY(0);
+	transform-origin: 0 0;
 	position: absolute;
 	background: #EFEFEF;
 	min-width: 250px;
@@ -182,7 +183,6 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px
 }
 
 .dropdown-content li {
-	transition-duration: 0.2s;
 	font-size: 16px;
 	color: #303030;
 	display: flex;
@@ -195,7 +195,7 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px
 li input { transform: scale(1.2); margin-right: 12px; }
 nav a, nav a:visited { color: #303030; }
 .dropdown-content li:hover { background: #FFF; color: #004B15; }
-.dropdown:hover .dropdown-content  { opacity: 1; transition-duration: 0.3s; visibility: visible; }
+.dropdown:hover .dropdown-content  { transform: scaleY(1); transition-duration: 0.5s; }
 .price-from-to { display: flex; align-items: center; }
 .from-to-item:first-child { cursor: default; margin-right: 8px; }
 .price-from-to input {
@@ -204,9 +204,28 @@ nav a, nav a:visited { color: #303030; }
 	margin-right: 8px;
 	max-width: 140px;
 }
+.submenu {
+	visibility: hidden;
+	transform: scaleX(0);
+	transform-origin: 0 0;
+	
+	display: grid;
+	width: 550px;
+	grid-template-columns: repeat(3,1fr);
 
-
-
+	left: 100%;
+	position: absolute;
+	background: #EFEFEF;
+	min-width: 250px;
+	box-shadow: 0px 8px 12px -1px rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+.submenu li { border-bottom: none; width: content; }
+.dropdown-content li:hover .submenu {
+	transform: scaleX(1);
+	visibility: visible;
+	transition-duration: 0.5s;
+}
 
 
 
@@ -330,6 +349,7 @@ label input:checked ~ span:after { display:block; }
 
 /* ------------- Телефоны -------------- */
 @media screen and ( max-width: 600px ) {
+	nav { display: block; }
 	header { padding: 8px 0; }
 	.search-line, .search-btn { padding: 6px; }
 	.user-block:nth-child(1n) { margin-right: 0; }
