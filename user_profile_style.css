@@ -32,7 +32,7 @@ article {
 .center-column:first-child { width: 100%; }
 
 /* Третья колонка */
-.right-column div { font-size: 24px; color: #018326; align-self: start; margin-top: 12px; }
+.right-column div { font-size: 24px; color: #018326; align-self: start; margin-top: 12px; cursor: default; }
 .title {
 	position: relative;
 	font-size: 22px;
@@ -86,7 +86,7 @@ label {
 /* hide default radio button  */
 label input[type=radio] {
 	position: absolute;
-	opactiy: 0;
+	display: none;
 	width:0; 
 	height:0;
 }
@@ -100,7 +100,7 @@ label span {
 	height:20px;
 	background-color: #ddd;
 	border-radius: 50%;
-	transition: .3s background-color; /* slight transition */
+	transition: 0.3s background-color; /* slight transition */
 }
 /* the check icon */
 label span:after {	
@@ -109,8 +109,8 @@ label span:after {
 	left:50%;
 	transform: translate(-50%,-50%);
 	background-color:#fff;
-	width:8px;
-	height:8px;
+	width:7px;
+	height:7px;
 	border-radius:50%;
 }
 label:hover span { background-color: #ccc; }

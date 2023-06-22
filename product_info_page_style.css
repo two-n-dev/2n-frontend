@@ -24,13 +24,12 @@ main {
 }
 
 .main-photo {
-	width: 100%;
+	width: 90%;
 	height: auto;
-	background: #ABABAB;
 }
 .photo-container {
 	margin-top: 12px;
-	width: 100%;
+	width: 90%;
 	display: grid;
 	grid-template-columns: repeat(4,1fr);
 	grid-template-rows: repeat(2,1fr);

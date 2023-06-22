@@ -1,6 +1,7 @@
 :hover, :active, :focus, :after { outline: none; outline-offset: none; }
 * { box-sizing: border-box; }
 ::selection { background: #B5C8B1; color: #000;}
+a, .variant, .price { user-select: none; }
 body {
 	font-family: 'Roboto', sans-serif;
 	margin: 0px;
@@ -39,7 +40,7 @@ button:not(:hover), a:not(:hover) { transition-duration: 0.2s; }
 	padding: 6px;
 	margin-top: 6px;
 	border: #2FB855 solid 1px;
-	background: #ECF8E9;
+	background: #ECFFEE;
 	align-self: center;
 }
 .empty-button:hover { background: #FFF; }
@@ -160,8 +161,19 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px
 /* -------------------- Выпадающий список Категории товаров ------------------- */
 .label { font-size: 22px; display: flex; align-items: center; }
 .label span { margin-right: 6px; }
-.label svg {  stroke: #018326; stroke-width: 2px; fill: none; padding-top: 3px; }
-.dropdown-content svg { fill: none; stroke: #464646; width: 11; height: 18; }
+.navigation svg, nav svg {
+	stroke: #018326;
+	stroke-width: 2px;
+	fill: none;
+	padding-top: 3px;
+	width: 20px;
+	height: 17px;
+}
+.dropdown-content svg {
+	fill: none;
+	stroke: #464646;
+	width: 11px; height: 18px;
+}
 .dropbtn {
 	color: #018326;
 	padding: 14px 10px;
@@ -191,11 +203,11 @@ footer a { text-decoration: none; color: #FFF; font-size: 18px
 	padding: 12px 16px;
 	text-decoration: none;
 }
-.space-between li { justify-content: space-between; }
+.space-between li { justify-content: space-between; align-items: flex-start; user-select: none; }
 li input { transform: scale(1.2); margin-right: 12px; }
 nav a, nav a:visited { color: #303030; }
 .dropdown-content li:hover { background: #FFF; color: #004B15; }
-.dropdown:hover .dropdown-content  { transform: scaleY(1); transition-duration: 0.5s; }
+.dropdown:hover .dropdown-content  { transform: scaleY(1); transition-duration: 0.3s; }
 .price-from-to { display: flex; align-items: center; }
 .from-to-item:first-child { cursor: default; margin-right: 8px; }
 .price-from-to input {
@@ -209,10 +221,6 @@ nav a, nav a:visited { color: #303030; }
 	transform: scaleX(0);
 	transform-origin: 0 0;
 	
-	display: grid;
-	width: 550px;
-	grid-template-columns: repeat(3,1fr);
-
 	left: 100%;
 	position: absolute;
 	background: #EFEFEF;
@@ -220,13 +228,19 @@ nav a, nav a:visited { color: #303030; }
 	box-shadow: 0px 8px 12px -1px rgba(0, 0, 0, 0.3);
 	z-index: 1;
 }
-.submenu li { border-bottom: none; width: content; }
+.submenu li { width: content; }
 .dropdown-content li:hover .submenu {
 	transform: scaleX(1);
 	visibility: visible;
 	transition-duration: 0.5s;
 }
-
+.navigation select {
+	width: 100%;
+	font-size: 16px;
+	color: #303030;
+	background: none;
+	border: none;
+}
 
 
 
@@ -349,7 +363,13 @@ label input:checked ~ span:after { display:block; }
 
 /* ------------- Телефоны -------------- */
 @media screen and ( max-width: 600px ) {
-	nav { display: block; }
+	.navigation {
+		position: hidden;
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+	}
+	nav { display: none; }
 	header { padding: 8px 0; }
 	.search-line, .search-btn { padding: 6px; }
 	.user-block:nth-child(1n) { margin-right: 0; }

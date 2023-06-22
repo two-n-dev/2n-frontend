@@ -8,11 +8,12 @@ main {
 	justify-content: center;
 }
 .background { padding: 32px; background: #FFF; 	display: flex; flex-direction: column; align-items: center; }
-.background svg { width: 620px; height: 520px; }
+.oops{ width: 620px; height: 520px; }
 .card-container {
 	position: relative;
 	padding: 12px;
 	margin-top: 12px;
+	width: 100%;
 	max-width: 800px;
 	min-width: 460px;
 	height: content;
@@ -21,8 +22,11 @@ main {
 	border: #D1D1D1 solid 1px;
 	background: #FFF;
 }
+.container { width: 100%; }
 .card-container:hover { box-shadow: 0px 0.1px 9px 1px #CFCFCF; transition-duration: 0.2s;}
 .card-container:not(:hover) { transition: 0.2s; }
+.card-container:hover .card-name { color: #006D1E; }
+.card-container:not(:hover) .card-name { transition: 0.2s; }
 .photo {
 	width: 150px;
 	height: 110px;
@@ -41,8 +45,8 @@ main {
 }
 
 
-/* Особенности элементов ценовой строки */
-.card-name:hover, .card-name:active, .card-name:visited { color: #006D1E; }
+/* Особенности элементов ценовой строки
+.card-name:hover, .card-name:active, .card-name:visited { color: #006D1E; } */
 .price { font-size: 22px;	color: #018326;		font-weight: 400; font-family: 'Roboto Condensed', sans-serif; margin-right: 12px; }
 .date {	font-size: 12px;	color: #ABABAB;	font-weight: 300; }
 .description-container {
@@ -54,9 +58,9 @@ main {
 	font-weight: 400;
 	color: #808080;
 }
-@media screen and (max-width: 1024px) {	.card-container { width: 100%; } }
-@media screen and (max-width: 625px) {
-	.background svg { width: 310px; height: 260px; }
+/*@media screen and (max-width: 1024px) {	.card-container { width: 100%; } }*/
+@media screen and (max-width: 600px) {
+	.oops { width: 310px; height: 260px; }
 	.card-container {
 		flex-direction: column;
 		align-items: center;
@@ -71,7 +75,7 @@ main {
 		justify-content: space-between;
 		align-items: center;
 }
-	.description-container {min-width: 160px; position: relative; }
+	.description-container {min-width: 160px; position: relative; max-height: 70px; }
 	.photo {
 		margin: 0 0 12px 0;
 		width: 100%;
